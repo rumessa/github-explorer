@@ -7,3 +7,5 @@ Made using React (JavaScript).
 - doesn't show repos as soon as opened. useEffect changes needed.
 - when name/description too big, the action button in column not properly centered.
 - pagination needs to be added. only 4 repos shown at a time (maybe 5).
+- lastly deploy on sth.
+- maybe convert to typescript
