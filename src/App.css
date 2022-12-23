@@ -1,0 +1,13 @@
+body {
+    background-color: var(--background);
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --text: #CECECE;
+    --background: #0a0b0a;
+    --red: #f5b82e;
+    --secondary-text: #ACACAC;
+    --border: #292929;
+}

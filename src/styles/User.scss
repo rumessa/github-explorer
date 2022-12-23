@@ -1,0 +1,263 @@
+.center-div {
+    height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+.center-div::-webkit-scrollbar {
+    background-color: var(--background);
+}
+.center-div::-webkit-scrollbar-thumb {
+	background-color: var(--background);
+}
+
+.user-info {
+    background-color: var(--background);
+    border: solid 1px var(--border);
+    width: 500px;
+    height: 180px;
+    position: relative;
+    border-radius: 2%;
+    padding: 10px;
+    
+    .user-info-left {
+        #avatar {
+            width: 112px;
+            height: 112px; 
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    
+        #name {
+            color: var(--text);
+            margin-top: 16px;
+            font-size: 18px;
+        }
+    }
+    
+    .user-info-right {
+        padding: 10px;
+
+        #github-link {
+            height: 20px;
+            color: var(--text);
+            font-size: 14px;
+            color: #E5E5E5;
+            text-decoration: none;
+            text-align: right;
+    
+            #username {
+                font-size: 14px;
+                margin: 0px;
+            }
+        }
+        #github-link:hover {
+            cursor: pointer;
+            text-shadow: 0 0 5px #E5E5E5;
+        }
+
+        .user-stats {
+            color: var(--text);
+
+            .user-stats-item {
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                gap: 6px;
+
+                p {
+                    font-size: 14px;
+                    color: var(--secondary-text);
+                    margin: 0;
+                }
+
+                h2 {
+                    font-size: 24px;
+                    margin: 0;
+                }
+            }
+        }
+    }  
+}
+
+table {
+    width: 660px;
+    margin-top: 30px;
+    border: 0.25px solid var(--border);
+
+    th, td {
+        color: var(--text);
+        border: 0.25px solid var(--border);
+    }
+    tr {
+        border: 0.25px solid var(--border);
+        min-height: 75px;
+    }
+    th {
+        text-align: center;
+        padding: 16px;
+    }
+    td {
+        padding: 20px 16px;
+        min-height: 100%;
+        font-size: 14px;
+    }
+
+    .repo-name {
+        min-width: 100px;
+    }
+    .repo-desc {
+        color: var(--secondary-text);
+        width: 305px;
+    }
+    .button {
+        display: grid;
+        place-items: center;
+        width: 60px;
+        min-height: 30px;
+        border: 1px solid var(--secondary-text);
+        background-color: var(--border);
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 5%;
+    }
+    .button:hover {
+        color: plum;
+    }
+    .button:hover, .button:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+    }
+    td:has(.button) { 
+        display: grid;
+        place-content: center;
+        border: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+#user-repos {
+    background-color: var(--background);
+    width: 548px;
+    position: relative;
+    margin-top: 30px;
+}
+
+#user-repos > p {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.repo {
+    background-color: #0A0A0A;
+    border: solid 1px var(--border);
+    width: 496px;
+    position: relative;
+    color: var(--text);
+    padding: 5px 25px;
+    padding-bottom: 0px;
+    height: 86px;
+    display: grid;
+    grid-template-columns: 60% 20%;
+    column-gap: 20%;
+    grid-template-rows: auto;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    text-decoration: none;
+}
+
+.repo:hover, .repo:focus {
+    background-color: var(--text);
+    border: solid 1px var(--border);
+    color: #0A0A0A;
+}
+
+.repo:hover .repo-stars-count, .repo:focus .repo-stars-count {
+    color: #0A0A0A;
+}
+
+.repo-details {
+    text-align: left;
+}
+
+.stars {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.repo-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.repo-description {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-text);
+    width: 305px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.repo-stars-count {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.span-color {
+    font-size: 12px;
+    color: var(--secondary-text);
+}
+
+.user-repos-button {
+    width: 548px;
+    height: 44px;
+    margin-top: 10px;
+    background: #0DA090;
+    border: 1px solid #72F2E4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 100px;
+}
+
+.user-repos-button-no-more {
+    width: 548px;
+    height: 44px;
+    margin-top: 10px;
+    background: var(--secondary-text);
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--background);
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 100px;
+}
+
+.user-repos-button:hover, .user-repos-button:focus {
+    cursor: pointer;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+
+
+
+
