@@ -26,7 +26,7 @@ const COLUMNS = [
     {
         Header: 'Actions',
         accessor: 'html_url',
-        Cell: props => <a className="button" href={props.value} target="_blank">Visit</a>
+        Cell: props => <a className="repo-btn button" href={props.value} target="_blank">Visit</a>
     }
 ]
 
@@ -171,7 +171,8 @@ function User(props) {
                 }
             </tbody>
         </table>
-}
+        }
+
         {!isFetching && !noMore && <button className='user-repos-button'onClick={loadRepos}>Load more</button>}
 
         {isFetching && <button className='user-repos-button'>Loading...</button>}

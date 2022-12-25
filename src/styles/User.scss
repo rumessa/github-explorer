@@ -109,9 +109,18 @@ table {
         color: var(--secondary-text);
         width: 305px;
     }
+    .repo-btn {
+        height: 100%;
+        display: grid;
+        place-items: center;
+        text-align: center;
+    }
+
+
     .button {
         display: grid;
         place-items: center;
+        text-align: center;
         width: 60px;
         min-height: 30px;
         border: 1px solid var(--secondary-text);
@@ -127,11 +136,13 @@ table {
         box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
         transform: translateY(-0.25em);
     }
-    td:has(.button) { 
-        display: grid;
-        place-content: center;
-        border: none;
-    }
+    // td:has(.button) { 
+    //     display: grid;
+    //     place-content: center;
+    //     border: none;
+    //     border: 1px solid pink;
+    //     height: 100%;
+    // }    messes up the td with button inside
 }
 
 
