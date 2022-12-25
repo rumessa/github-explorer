@@ -130,7 +130,7 @@ table {
         border-radius: 5%;
     }
     .button:hover {
-        color: plum;
+        color: var(--accent);
     }
     .button:hover, .button:focus {
         box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
@@ -146,92 +146,6 @@ table {
 }
 
 
-
-
-
-
-
-
-
-
-
-#user-repos {
-    background-color: var(--background);
-    width: 548px;
-    position: relative;
-    margin-top: 30px;
-}
-
-#user-repos > p {
-    font-size: 18px;
-    color: var(--text);
-    font-weight: 500;
-}
-
-.repo {
-    background-color: #0A0A0A;
-    border: solid 1px var(--border);
-    width: 496px;
-    position: relative;
-    color: var(--text);
-    padding: 5px 25px;
-    padding-bottom: 0px;
-    height: 86px;
-    display: grid;
-    grid-template-columns: 60% 20%;
-    column-gap: 20%;
-    grid-template-rows: auto;
-    border-radius: 4px;
-    margin-bottom: 14px;
-    text-decoration: none;
-}
-
-.repo:hover, .repo:focus {
-    background-color: var(--text);
-    border: solid 1px var(--border);
-    color: #0A0A0A;
-}
-
-.repo:hover .repo-stars-count, .repo:focus .repo-stars-count {
-    color: #0A0A0A;
-}
-
-.repo-details {
-    text-align: left;
-}
-
-.stars {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-}
-
-.repo-name {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.repo-description {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--secondary-text);
-    width: 305px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.repo-stars-count {
-    font-size: 18px;
-    color: var(--text);
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.span-color {
-    font-size: 12px;
-    color: var(--secondary-text);
-}
 
 .user-repos-button {
     width: 548px;
