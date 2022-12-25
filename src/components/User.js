@@ -68,7 +68,7 @@ function User(props) {
     }
 
     const columns = useMemo(() => COLUMNS, []);
-    const data = useMemo(() => repos, []);
+    const data = useMemo(() => repos, [repos]);
     const tableInstance = useTable({
         columns,
         data 
@@ -110,33 +110,6 @@ function User(props) {
                 </div>
             </div>
         </div>
-        
-        {/* <div id='user-repos'>
-            <p>Repositories</p>
-            {   
-                {repoLoaded} && 
-                repos.map((repo) => {
-                    return (
-                        <a className='repo' href={repo.html_url} target="_blank">
-                            <div className='repo-details'>
-                                <p className='repo-name'>{repo.name}</p>
-                                <p className='repo-description'>{repo.description}</p>
-                            </div>
-                            <div className='stars'>
-                                <p className='repo-stars-count'>{formatCounts(repo.stargazers_count)}</p><span className='span-color'>Stars</span>
-                            </div>
-                        </a>
-                    ) 
-                })
-            }
-            
-            {!isFetching && !noMore && <button className='user-repos-button'onClick={loadRepos}>Load more</button>}
-
-            {isFetching && <button className='user-repos-button'>Loading...</button>}
-
-            {count === 0 ? <p>No repositories to show</p> : noMore && <button className='user-repos-button-no-more'>No more to load</button>}
-
-        </div> */}
 
         {repoLoaded &&
         <table {...getTableProps()}>

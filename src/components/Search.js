@@ -58,7 +58,7 @@ const Search = () => {
 
             {!dataLoaded && 
               <div className='search-div my-5 d-flex justify-content-center align-items-center'>
-                  <label className='heading px-2'>The Github username I am searching for is <input className="search-bar" type="text" placeholder="username, per favore" onKeyDown={handleChange}/></label> 
+                  <label className='heading px-2'>The <span className='fancy'>GitHub</span> username I am searching for is <input className="search-bar" type="text" placeholder="username, per favore" onKeyDown={handleChange}/></label> 
               </div>
             }
             

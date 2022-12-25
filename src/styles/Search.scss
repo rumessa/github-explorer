@@ -43,3 +43,29 @@
     height: auto;
 }
 
+.fancy {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--dark-accent),
+        var(--orange),
+        var(--accent),
+        var(--dark-accent)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+
