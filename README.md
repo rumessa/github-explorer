@@ -4,7 +4,7 @@ Made using React (JavaScript).
 
 
 ### issues:
-- doesn't show repos as soon as opened. useEffect changes needed.
+- ~~doesn't show repos as soon as opened. hook changes needed.~~
 - ~~when name/description too big, the action button in column not properly centered.~~
 - pagination needs to be added. only 4 repos shown at a time (maybe 5).
 - lastly deploy on sth.
