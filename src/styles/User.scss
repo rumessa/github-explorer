@@ -116,7 +116,6 @@ table {
         text-align: center;
     }
 
-
     .button {
         display: grid;
         place-items: center;
@@ -145,42 +144,46 @@ table {
     // }    messes up the td with button inside
 }
 
+.pagination-area {
+    display: grid;
+    place-items: center;
+    padding: 20px;
 
+    .page-numbers {
+        color: var(--secondary-text);
+        font-size: 14px;
+    }
 
-.user-repos-button {
-    width: 548px;
-    height: 44px;
-    margin-top: 10px;
-    background: #0DA090;
-    border: 1px solid #72F2E4;
-    box-sizing: border-box;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text);
-    font-family: 'Roboto Mono', monospace;
-    margin-bottom: 100px;
-}
+    .page-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
 
-.user-repos-button-no-more {
-    width: 548px;
-    height: 44px;
-    margin-top: 10px;
-    background: var(--secondary-text);
-    border: 1px solid var(--border);
-    box-sizing: border-box;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--background);
-    font-family: 'Roboto Mono', monospace;
-    margin-bottom: 100px;
-}
-
-.user-repos-button:hover, .user-repos-button:focus {
-    cursor: pointer;
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
+        button:hover, button:focus {
+            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+            transform: translateY(-0.25em);
+        }
+        button {
+            text-align: center;
+            width: 80px;
+            min-height: 30px;
+            border: 1px solid var(--secondary-text);
+            background-color: var(--border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 5%;
+        }
+        button:hover {
+            color: var(--accent);
+        }
+        button:disabled {
+            color: var(--background);
+            background-color: var(--secondary-text);
+            transform: none;
+        }
+    }
+    
 }
 
 
