@@ -1,4 +1,4 @@
-body {
+body, html {
     background-color: var(--background);
     padding: 0px;
     margin: 0px;
