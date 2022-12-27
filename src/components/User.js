@@ -36,21 +36,15 @@ const COLUMNS = [
 function User(props) {
     const [repos, setRepos] = useState([]);
     const [repoLoaded, setRepoLoaded] = useState(false);
-    const [isFetching, setIsFetching] = useState(false);
-    const [noMore, setNoMore] = useState(false);
-    const [count, setCount] = useState(2);
-    // const reposZero = false;
 
     useEffect(() => {
         loadRepos();
     }, [])
 
     function loadRepos() {
-        setIsFetching(true);
         axios({
             method: "GET",
-            url: props.details.repos_url 
-            // + "?per_page=" + count,   (if we wanted a specific number per load for example)
+            url: props.details.repos_url+ "?per_page=" + 100
           }
         )
         .then((res) => {
@@ -58,14 +52,8 @@ function User(props) {
             setRepos(
                 res.data.sort((a, b) => b.stargazers_count - a.stargazers_count)
             )
-            // if (res.data.length === repos.length) {
-            //     setNoMore(true);
-            // }
             setRepoLoaded(true);
-            // setIsFetching(false);
-
-            // if (res.data.length === 0) {setCount(0);}
-            // else {setCount(count + 2);}
+            console.log(repos);
         })
         .catch((e) => {
             console.log(e);
@@ -89,7 +77,8 @@ function User(props) {
             alphanumeric: (row1, row2, columnName) => {
                 return compareIgnoreCase(row1.values[columnName], row2.values[columnName])
             },
-        }
+        },
+        initialState: { pageSize: 5 }
     },
     useSortBy,
     usePagination);
@@ -102,11 +91,13 @@ function User(props) {
         canNextPage,
         canPreviousPage,
         pageOptions,
-        state, 
+        state,
+        gotoPage,
+        setPageSize, 
         prepareRow 
     } = tableInstance;
 
-    const { pageIndex } = state;
+    const { pageIndex, pageSize } = state;
 
     return (
     <div className="center-div d-flex flex-column align-items-center">
@@ -178,22 +169,33 @@ function User(props) {
         }
 
         <div className='pagination-area'>
-            <p className='page-numbers'>Page {pageIndex + 1} of {pageOptions.length}</p>
+            {console.log(pageOptions.length)}
+            <p className='page-numbers'>
+                Page {pageIndex + 1} of {pageOptions.length}  |  Go To <input className="input-num" type="number" defaultValue={pageIndex+1} onChange={
+                    (e) => {
+                        const pgNum = e.target.value ? Number(e.target.value) - 1 : 0;
+                        gotoPage(pgNum);
+                    }
+                }></input>
+            </p>
+
             <div className='page-buttons'>
                 <button onClick={() => previousPage()} disabled={!canPreviousPage}>Previous</button>
                 <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
             </div>
+
+            <select className="page-sizing" defaultValue={pageSize} onChange={(e) => {setPageSize(Number(e.target.value))}}>
+                {
+                    [5, 10, 15, 20].map(pageSize => (
+                        <option key={pageSize} value={pageSize}>
+                            Show {pageSize}
+                        </option>
+                    ))
+                }
+            </select>
         </div>
-        
-
-        {/* {!isFetching && !noMore && <button className='user-repos-button'onClick={loadRepos}>Load more</button>}
-
-        {isFetching && <button className='user-repos-button'>Loading...</button>}
-
-        {count === 0 ? <p>No repositories to show</p> : noMore && <button className='user-repos-button-no-more'>No more to load</button>} */}
 
     </div>  
     );
 }
-  
-  export default User;
+export default User;

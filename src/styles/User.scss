@@ -183,7 +183,31 @@ table {
             transform: none;
         }
     }
+
+    .input-num {
+        background-color: var(--background);
+        width: 50px;
+        border: solid 0.25px var(--border);
+        box-sizing: border-box;
+    }
+    .input-num[type=number] {
+        color: var(--secondary-text);
+    }
+    .input-num:focus {
+        outline: none;
+    }
     
+    .page-sizing {
+        background-color: var(--background);
+        margin: 18px;
+        color: var(--secondary-text);
+        width: 100px;
+        border: solid 0.25px var(--border);
+        box-sizing: border-box;
+    }
+    .page-sizing:focus {
+        outline: none;
+    }
 }
 
 
